@@ -2,6 +2,6 @@
 </script>
 
 <template>
- <div>Hello</div>
+ <div>This is my Vue.js Project</div>
 </template>
 
