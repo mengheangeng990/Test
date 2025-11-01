@@ -4,10 +4,12 @@
       <p class="description">{{ Description }}</p>
       <img class="image" :src="image" alt="Promotion" />
       <div class="buttonContainer">
-        <ButtonCard
+        <button @click="shopNow" style="border: none;">
+          <ButtonCard
           :text="buttonText"
           :bgcolor="buttonColor"
         />
+        </button>
       </div>
     </div>
   </div>
@@ -17,7 +19,7 @@
 import ButtonCard from './Button.vue';
 import { defineProps } from 'vue';
 
-defineProps<{
+const props = defineProps<{
 
   Description: string
   image: string
@@ -26,6 +28,10 @@ defineProps<{
   buttonColor: string
 
 }>()
+
+function shopNow(): void{
+  alert("Let's shop: " + (typeof buttonText !== 'undefined' ? buttonText: '') + props.Description);
+}
 
 </script>
 
